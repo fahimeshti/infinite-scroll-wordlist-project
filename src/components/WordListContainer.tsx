@@ -7,6 +7,7 @@ function WordListContainer() {
   const [searchedData, setSearchedData] = useState<string[]>([]);
   const [searchedQuery, setSearchedQuery] = useState<string>("");
   const [page, setPage] = useState(1);
+  const [loading, setLoading] = useState(false);
   const myRef = useRef<any>();
 
   // scroll function
@@ -30,6 +31,7 @@ function WordListContainer() {
 
   // read text file
   useEffect(() => {
+    setLoading(true);
     fetch(
       "https://raw.githubusercontent.com/dwyl/english-words/master/words_alpha.txt"
     )
@@ -39,6 +41,8 @@ function WordListContainer() {
         const data = text.split("\r\n");
         // save to state
         setWordData(data);
+        // stop loading
+        setLoading(false);
       })
       .catch((e) => console.error(e));
   }, []);
@@ -85,6 +89,12 @@ function WordListContainer() {
       >
         {/* inner container */}
         <div className="h-auto relative">
+          {/* loading message */}
+          {loading && (
+            <p className="text-gray-400 py-4 text-center font-medium">
+              Loading...
+            </p>
+          )}
           {/* list */}
           <ul className="space-y-2">
             {(searchedQuery?.length > 0 ? searchedData : visibleWordData).map(
