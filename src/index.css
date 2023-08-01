@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CUSTOM SCROLL BAR design */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #2c3c5d;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #111827;
+}
