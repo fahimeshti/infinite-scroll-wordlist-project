@@ -21,6 +21,7 @@ export default function SearchComponent({ handleChange }: Props) {
           />
         </svg>
         <input
+          title="Currently set to search on visible items only"
           type="text"
           onChange={(event) => handleChange(event.target.value)}
           placeholder="Search for"

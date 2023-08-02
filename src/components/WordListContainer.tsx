@@ -79,12 +79,12 @@ function WordListContainer() {
   return (
     <div className="flex flex-col w-full h-full bg-gray-900 rounded">
       {/* searchbox */}
-      <div className="sticky top-0 p-8 pb-4">
+      <div className="sticky top-0 p-4 lg:p-8 pb-2 lg:pb-4">
         <SearchComponent handleChange={handleChange} />
       </div>
       {/* word container */}
       <div
-        className="w-full h-full p-8 pt-2 rounded overflow-y-auto"
+        className="w-full h-full p-4 lg:p-8 pt-2 lg:pt-2 rounded overflow-y-auto"
         ref={myRef}
       >
         {/* inner container */}

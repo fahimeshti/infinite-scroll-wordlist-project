@@ -4,9 +4,9 @@ import WordListContainer from "./components/WordListContainer";
 function App() {
   return (
     <>
-      <div className="bg-gray-800 flex flex-col items-center justify-center w-full h-screen py-12 px-32">
+      <div className="bg-gray-800 flex flex-col items-center justify-center w-full h-screen px-4 sm:px-8 py-12 lg:px-32">
         {/* top heading */}
-        <h1 className="text-gray-300 text-2xl font-semibold my-4">
+        <h1 className="text-gray-300 text-xl lg:text-2xl font-semibold my-4 text-center">
           Infinite scroll word list by{" "}
           <a
             href="https://github.com/fahimeshti"
